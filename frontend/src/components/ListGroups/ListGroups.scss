@@ -1,0 +1,67 @@
+@import '../../utils/style-variables.scss';
+
+.list-groups {
+  display: flex;
+  flex-direction: column;
+  width: 6.25%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(3906.1% 3815.36% at 89.06% 78.28%, rgba(19, 17, 16, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%);
+  box-shadow: inset -1px 0px 2px rgba(255, 255, 255, 0.2), inset 1px 1px 16px rgba(112, 102, 94, 0.2);
+
+  @media screen and (max-width : 719px) {
+    width: 15%;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    left: -15%;
+    transition: opacity .2s ease, visibility .2s ease, left .3s ease;
+
+    &_opened {
+      opacity: 1;
+      visibility: visible;
+      left: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 66.67%;
+    height: 82%;
+    padding: 0;
+    margin: auto;
+    list-style: none;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  &__add-button {
+    display: block;
+    width: 66.67%;
+    padding: 0;
+    margin: 0 auto 40%;
+
+    background: center / 50% no-repeat url("../../images/add-group.svg"), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), radial-gradient(149.08% 93.3% at 38.75% 72.1%, #000000 0%, #231900 0.01%, #4D4D4D 100%);
+    box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.2), inset 2px 2px 16px rgba(103, 103, 103, 0.6);
+    border-radius: 50%;
+    overflow: hidden;
+    border: none;
+
+    opacity: 1;
+    transition: opacity .3s linear;
+    @include square-container;
+
+    @media screen and (min-width : 768px) {
+      &:hover {
+        cursor: pointer;
+        opacity: .5;
+      }
+    }
+  }
+}

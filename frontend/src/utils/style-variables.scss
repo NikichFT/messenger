@@ -1,0 +1,7 @@
+@mixin square-container {
+  &::after {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}

@@ -1,0 +1,30 @@
+@import '../../utils/style-variables.scss';
+
+.group {
+  display: flex;
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  opacity: .4;
+  transition: opacity .2s linear;
+  @include square-container;
+
+  &_active {
+    opacity: 1;
+  }
+
+  @media screen and (min-width : 768px) {
+    &:not(.group_active):hover {
+      cursor: pointer;
+      opacity: .7;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+  }
+}
